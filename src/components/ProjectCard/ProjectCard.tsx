@@ -40,7 +40,6 @@ export default function ProjectCard() {
         <TechPill type="python" />
         <TechPill type="typescript" />
         <TechPill type="javascript" />
-        <TechPill type="docker" />
         <TechPill type="aurelia" />
         <TechPill type="react" />
         <TechPill type="python" />
