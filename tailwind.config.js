@@ -1,16 +1,21 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
-module.exports = {
-  mode: 'jit',
-  purge: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+export default {
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
+  ],
   theme: {
     extend: {
-      fontWeight: ['hover', 'focus'],
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-inter)"],
       },
     },
   },
-  variants: {},
-  plugins: []
-};
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  plugins: [typography],
+} satisfies Config;
