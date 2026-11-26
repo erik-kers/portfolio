@@ -7,7 +7,7 @@ type TextProps = {
 
 export default function Text({ children, gutterBottom }: TextProps) {
   return (
-    <p className={`font-mono text-justify ${gutterBottom && 'mb-10'}`}>
+    <p className={`${gutterBottom ? 'mb-4' : ''}`}>
       {children}
     </p>
   )

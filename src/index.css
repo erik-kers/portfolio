@@ -1,7 +1,91 @@
 @import "tailwindcss";
 
-nav a:hover,
-nav a[aria-current="page"] {
+html {
+  background: #fff;
+  color: #000;
+  font-family: var(--font-mono);
+  scroll-padding-top: 5rem;
+}
+
+.nfo-document {
+  width: min(100% - 2rem, 66ch);
+  margin-inline: auto;
+  padding-bottom: 4rem;
+}
+
+.nfo-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  border-bottom: 1px dashed currentColor;
+}
+
+.nfo-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.75rem;
+  padding-block: 0.75rem;
+}
+
+.nfo-nav li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.nfo-nav li + li::before {
+  content: "/" / "";
+}
+
+.nfo-nav a {
+  padding-block: 0.25rem;
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 0.2em;
+}
+
+.nfo-nav a:hover,
+.nfo-nav a[aria-current="page"] {
+  color: #fff;
+  background: #000;
+}
+
+.nfo-header {
+  padding-block: 2rem;
+  text-align: center;
+}
+
+.nfo-header pre {
+  width: max-content;
+  margin: 0 auto 1rem;
+  font-size: clamp(0.4375rem, 2.5vw, 1rem);
+  line-height: 1.05;
+}
+
+.nfo-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nfo-section {
+  border-top: 1px dashed currentColor;
+  padding-block: 1.5rem;
+}
+
+.nfo-section h2 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nfo-entry + .nfo-entry {
+  margin-top: 1.5rem;
+}
+
+.nfo-tag {
+  border: 1px solid currentColor;
+  padding-inline: 0.25rem;
+  font-size: 0.875em;
 }

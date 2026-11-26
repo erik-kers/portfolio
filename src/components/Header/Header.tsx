@@ -1,6 +1,4 @@
 const ascii = `
-       HAPPY FRONTEND DEVELOPER FROM STOCKHOLM
-
       ▄████████    ▄████████  ▄█     ▄█   ▄█▄ 
       ███    ███   ███    ███ ███    ███ ▄███▀ 
       ███    █▀    ███    ███ ███▌   ███▐██▀   
@@ -22,16 +20,13 @@ const ascii = `
    █                        █      █         ██
    █                        █      ▀          ▀
    ▀
-
-                      PRE-ALPHA
 `
 export default function Header() {
   return (
-    <header className="mt-10 text-xs md:text-xl">
-      <pre>
-        {ascii}
-      </pre>
+    <header className="nfo-header">
+      <pre aria-hidden="true">{ascii}</pre>
+      <h1>Erik Kers</h1>
+      <p>Frontend developer in Stockholm.</p>
     </header>
-
-  );
+  )
 }
