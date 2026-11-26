@@ -1,4 +1,4 @@
-import { createHashHistory, createRootRoute, createRoute, createRouter, Link } from '@tanstack/react-router'
+import { createRootRoute, createRoute, createRouter, Link } from '@tanstack/react-router'
 import App, { Description, Home, Projects, Resume } from './App'
 
 const rootRoute = createRootRoute({
@@ -15,7 +15,6 @@ const resumeRoute = createRoute({ getParentRoute: () => rootRoute, path: '/resum
 
 export const router = createRouter({
   routeTree: rootRoute.addChildren([homeRoute, descriptionRoute, projectsRoute, resumeRoute]),
-  history: createHashHistory(),
   scrollRestoration: true,
 })
 
