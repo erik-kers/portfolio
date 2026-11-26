@@ -1,5 +1,3 @@
-import React from 'react'
-
 type TechPillProps = {
   type: string,
 }

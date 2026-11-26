@@ -1,26 +1,13 @@
-import React from 'react'
-
-type NavItemProps = {
-  title: string
-}
-function NavItem({ title }: NavItemProps) {
-  return (
-    <li>
-      <span className="cursor-pointer mx-5 hover:text-green-200 hover:underline underline-offset-4">
-        {title}
-      </span>
-    </li>
-  )
-}
+import { Link } from '@tanstack/react-router'
 
 export default function Navigation() {
   return (
-    <nav>
-      <ul className="flex mt-10">
-        <NavItem title={'home'} />
-        <NavItem title={'description'} />
-        <NavItem title={'projects'} />
-        <NavItem title={'resumé'} />
+    <nav aria-label="Main navigation">
+      <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <li><Link to="/" activeOptions={{ exact: true }}>home</Link></li>
+        <li><Link to="/description">description</Link></li>
+        <li><Link to="/projects">projects</Link></li>
+        <li><Link to="/resume">resumé</Link></li>
       </ul>
     </nav>
   )
