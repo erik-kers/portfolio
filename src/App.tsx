@@ -1,9 +1,12 @@
-import { Outlet } from '@tanstack/react-router'
+import { Link, Outlet } from '@tanstack/react-router'
 import Header from '@/components/Header'
 import Navigation from '@/components/Navigation'
 import Text from '@/components/Text'
 import ResumeCard from '@/components/ResumeCard'
 import ProjectCard from '@/components/ProjectCard'
+import Skills from '@/components/Skills'
+import projects from '@/data/projects.json'
+import { skillsById } from '@/data/skills'
 
 export default function App() {
   return (
@@ -31,15 +34,23 @@ export function Description() {
   )
 }
 
-export function Projects() {
+export function Projects({ skill }: { skill?: string }) {
+  const selectedSkill = skill ? skillsById.get(skill) : undefined
+  const visibleProjects = selectedSkill
+    ? projects.filter(project => project.skills.includes(selectedSkill.id))
+    : projects
+
   return (
     <section className="nfo-section" aria-labelledby="pro-heading">
       <h2 id="pro-heading">Projects</h2>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {selectedSkill && (
+        <p className="mb-4">
+          Using <strong>{selectedSkill.label}</strong>{' '}
+          <Link className="underline" to="/projects" search={{}}>Show all projects</Link>
+        </p>
+      )}
+      {visibleProjects.map(project => <ProjectCard key={project.id} {...project} />)}
+      {visibleProjects.length === 0 && <p>No projects to show.</p>}
     </section>
   )
 }
@@ -48,6 +59,7 @@ export function Resume() {
   return (
     <section className="nfo-section" aria-labelledby="rés-heading">
       <h2 id="rés-heading">Résumé</h2>
+      <Skills />
       <ResumeCard />
       <ResumeCard />
       <ResumeCard />

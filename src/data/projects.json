@@ -1,0 +1,8 @@
+[
+  {
+    "id": "portfolio",
+    "title": "Portfolio",
+    "description": "This site is a developer portfolio inspired by old .nfo files. Its pages use TanStack Router.",
+    "skills": ["typescript", "react"]
+  }
+]
