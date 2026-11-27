@@ -1,9 +1,9 @@
 [
   {
-    "id": "forena-member-portal",
-    "title": "Forena — Member self-service portal",
+    "id": "member-self-service",
+    "title": "Member self-service portal",
     "period": "Jun 2025–Nov 2026",
-    "description": "Served as tech lead and lead frontend developer for Forena’s new member portal. Led the architecture and delivery across Next.js, Payload CMS, a .NET API, and Azure. Members can manage their accounts and cases through BankID sign-in, and Forena can update pages without developer help. The portal was built for reuse by other unions on the MMS membership platform.",
+    "description": "A self-service portal for managing membership details, invoices, and cases, with a content editor for updating pages.",
     "skills": [
       "nextjs",
       "typescript",
@@ -21,9 +21,9 @@
   },
   {
     "id": "membership-application",
-    "title": "Political party — Membership application",
+    "title": "Membership application",
     "period": "Mar 2025–Nov 2026",
-    "description": "Built the React application from scratch and owned its architecture, payments, testing, and deployment. Applicants can join and pay in one flow, and completed applications are sent automatically to the membership system.",
+    "description": "An online form that combines membership signup and payment and automatically sends completed applications to the membership system.",
     "skills": [
       "react",
       "typescript",
@@ -41,10 +41,10 @@
     ]
   },
   {
-    "id": "autoplan-leasing-portal",
-    "title": "AutoPlan — Leasing portal upgrade",
+    "id": "leasing-portal",
+    "title": "Leasing portal upgrade",
     "period": "Sep 2025–Feb 2026",
-    "description": "Led the frontend upgrade of AutoPlan’s leasing portal. Built the new Power Pages interface from UX designs, refactored the existing code, and mentored junior developers so they could work more independently in the codebase.",
+    "description": "A web portal for managing vehicle leases, with a redesigned interface built in Power Pages.",
     "skills": [
       "power-pages",
       "bootstrap",
@@ -55,10 +55,10 @@
     ]
   },
   {
-    "id": "pappers-dues-reporting",
-    "title": "Pappers — Union dues reporting",
+    "id": "application-modernization",
+    "title": "Legacy application modernization",
     "period": "Oct–Dec 2024",
-    "description": "Rebuilt the frontend of a legacy ASP.NET app accountants use to report union dues. Adapted the new React interface to a separate .NET 8 API, making the frontend easier to maintain and test.",
+    "description": "A web application for submitting recurring reports, with a React frontend and a separate API.",
     "skills": [
       "react",
       "vite",
@@ -70,10 +70,10 @@
     ]
   },
   {
-    "id": "kommunal-modernization",
-    "title": "Kommunal — KomMed Web modernization",
+    "id": "membership-admin-modernization",
+    "title": "Membership administration rebuild",
     "period": "Jan–Jun 2023",
-    "description": "Co-led the rebuild of Kommunal’s membership administration interface in Next.js. Worked with the client’s test lead and moved more logic to the server for better security.",
+    "description": "A dashboard for managing memberships, workplace records, and communications.",
     "skills": [
       "nextjs",
       "zustand",
@@ -84,10 +84,10 @@
     ]
   },
   {
-    "id": "tya-certification",
-    "title": "TYA — Training and certification",
+    "id": "training-certification",
+    "title": "Training and certification",
     "period": "Jan–Sep 2022",
-    "description": "Led frontend development for two apps that replaced TYA’s training and certification system. Instructors register training digitally, and drivers sign in with BankID to view certificates and pay for replacement cards. Set up deployment pipelines and Azure hosting.",
+    "description": "Two web apps for registering training, viewing certifications, and ordering replacement cards.",
     "skills": [
       "nextjs",
       "react-query",
@@ -103,10 +103,10 @@
     ]
   },
   {
-    "id": "kommunal-member-motions",
-    "title": "Kommunal — Member motions",
+    "id": "member-motions",
+    "title": "Member motions",
     "period": "Jan–May 2022",
-    "description": "Built a Next.js app for member proposals and motions. Integrated Dynamics 365 data and improved form validation and the overview for members.",
+    "description": "A web app for drafting, submitting, and tracking member proposals and motions.",
     "skills": [
       "nextjs",
       "react-query",
@@ -117,10 +117,10 @@
     ]
   },
   {
-    "id": "if-metall-finance",
-    "title": "IF Metall — Finance applications",
+    "id": "finance-applications",
+    "title": "Finance applications",
     "period": "Jun 2021–Jun 2022",
-    "description": "Built two apps for invoice and ledger workflows with the finance team. Integrated them with Dynamics 365 and helped establish deployment routines.",
+    "description": "Two web apps for handling invoices and ledger cases, integrated with Dynamics 365.",
     "skills": [
       "react",
       "typescript",
@@ -131,10 +131,10 @@
     ]
   },
   {
-    "id": "kommunal-course-admin",
-    "title": "Kommunal — Course administration",
+    "id": "course-admin",
+    "title": "Course administration",
     "period": "Dec 2018–May 2019",
-    "description": "Built booking and scheduling features for the course administration module in Kommunal’s existing platform, integrated with Dynamics 365.",
+    "description": "A course administration module for managing bookings and schedules.",
     "skills": [
       "javascript",
       "jquery",
@@ -146,10 +146,10 @@
     ]
   },
   {
-    "id": "if-metall-meetings",
-    "title": "IF Metall — Meetings and case management",
+    "id": "meetings-case-management",
+    "title": "Meetings and case management",
     "period": "Sep 2017–Sep 2018",
-    "description": "Worked with a senior developer on a web app for meetings, minutes, and case management, integrated with Dynamics 365.",
+    "description": "A web app for managing meetings, minutes, and cases.",
     "skills": [
       "javascript",
       "typescript",
@@ -163,7 +163,7 @@
   {
     "id": "portfolio",
     "title": "Portfolio",
-    "description": "This site is a developer portfolio inspired by old .nfo files. Its pages use TanStack Router.",
+    "description": "A developer portfolio inspired by old .nfo files, with a résumé and a filterable project index.",
     "skills": [
       "typescript",
       "react",
