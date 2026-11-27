@@ -1,30 +1,48 @@
-const ascii = `
-      ▄████████    ▄████████  ▄█     ▄█   ▄█▄ 
-      ███    ███   ███    ███ ███    ███ ▄███▀ 
-      ███    █▀    ███    ███ ███▌   ███▐██▀   
-     ▄███▄▄▄      ▄███▄▄▄▄██▀ ███▌ ▄▄█████▀    
-    ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ███▌ ▀▀█████▄    
-      ███    █▄  ▀███████████ ███    ███▐██▄   
-      ███    ███   ███    ███ ███    ███ ▀███▄ 
-      ██████████   ██     ██  █▀     ███   ▀█▀ 
-          █         ███   █▀         █▀     █
-   ▄█ █  ▄█▄    ▄████████ █ ▄████████    ▄████████ 
-   ███ ▄███▀   ███    ███ █ ███    ███   ███    ███ 
-   ███▐██▀     ███    █▀    ███    ███   ███    █▀  
-  ▄█████▀     ▄███▄▄▄     █▄███▄▄▄▄██▀   ███        
- ▀▀█████▄    ▀▀███▀▀▀ █   ▀▀███▀▀▀▀▀     ▀█████████▀
-   ███▐██▄     ███    █▄  ▀███████████          ███ 
-   ███ ▀███▄   ███    ███   ███    ███    ▄█    ███ 
-   ███   ▀█▀   ██████████   ███    ███  ▄████████▀  
-   █▀                       █▀     █▀      █████     
-   █                        █      █         ██
-   █                        █      ▀          ▀
-   ▀
-`
+import { useState } from 'react'
+
+const firstName = `▓█████  ██▀███   ██▓ ██ ▄█▀
+▓█   ▀ ▓██ ▒ ██▒▓██▒ ██▄█▒
+▒███   ▓██ ░▄█ ▒▒██▒▓███▄░
+▒▓█  ▄ ▒██▀▀█▄  ░██░▓██ █▄
+░▒████▒░██▓ ▒██▒░██░▒██▒ █▄
+░░ ▒░ ░░ ▒▓ ░▒▓░░▓  ▒ ▒▒ ▓▒
+ ░ ░  ░  ░▒ ░ ▒░ ▒ ░░ ░▒ ▒░
+   ░     ░░   ░  ▒ ░░ ░░ ░
+   ░  ░   ░      ░  ░  ░`
+
+const lastName = ` ██ ▄█▀▓█████  ██▀███    ██████
+ ██▄█▒ ▓█   ▀ ▓██ ▒ ██▒▒██    ▒
+▓███▄░ ▒███   ▓██ ░▄█ ▒░ ▓██▄
+▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄    ▒   ██▒
+▒██▒ █▄░▒████▒░██▓ ▒██▒▒██████▒▒
+▒ ▒▒ ▓▒░░ ▒░ ░░ ▒▓ ░▒▓░▒ ▒▓▒ ▒ ░
+░ ░▒ ▒░ ░ ░  ░  ░▒ ░ ▒░░ ░▒  ░ ░
+░ ░░ ░    ░     ░░   ░ ░  ░  ░
+░  ░      ░  ░   ░           ░`
+
 export default function Header() {
+  const [glitchCount, setGlitchCount] = useState(0)
+
   return (
     <header className="nfo-header">
-      <pre aria-hidden="true">{ascii}</pre>
+      <button
+        type="button"
+        className="nfo-logo"
+        aria-label="Replay logo glitch"
+        onClick={() => setGlitchCount(count => count + 1)}
+      >
+        {[firstName, lastName].map(word => (
+          <span key={word} className="nfo-logo-word" aria-hidden="true">
+            {word.split('\n').map((row, index) => (
+              <span key={index} className="nfo-logo-row">
+                <span key={glitchCount} className={glitchCount > 0 ? 'nfo-logo-replay' : undefined}>
+                  {row}
+                </span>
+              </span>
+            ))}
+          </span>
+        ))}
+      </button>
       <h1>Erik Kers</h1>
       <p>Frontend developer in Stockholm.</p>
       <p className="mt-3">

@@ -63,11 +63,103 @@ html {
   text-align: center;
 }
 
-.nfo-header pre {
+.nfo-logo {
+  display: grid;
+  justify-items: center;
   width: max-content;
+  cursor: pointer;
+  gap: 0.35em;
   margin: 0 auto 1rem;
-  font-size: clamp(0.4375rem, 2.5vw, 1rem);
-  line-height: 1.05;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(10px, 4.15vw, 24px);
+  line-height: 1;
+}
+
+.nfo-logo:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 6px;
+}
+
+.nfo-logo-word {
+  text-align: left;
+  white-space: pre;
+}
+
+.nfo-logo-row {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nfo-logo-word {
+    perspective: 14em;
+  }
+
+  .nfo-logo-word + .nfo-logo-word {
+    --word-delay: 90ms;
+  }
+
+  .nfo-logo-row {
+    --row-delay: 0ms;
+    --row-offset: -0.65em;
+    --row-depth: -3em;
+    --row-tilt: -32deg;
+    animation: nfo-logo-reveal 680ms cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--word-delay, 0ms) + var(--row-delay)) both;
+  }
+
+  .nfo-logo-row:nth-child(3n + 2) {
+    --row-delay: 45ms;
+    --row-offset: 0.65em;
+    --row-depth: -5em;
+    --row-tilt: 37deg;
+  }
+
+  .nfo-logo-row:nth-child(3n) {
+    --row-delay: 90ms;
+    --row-offset: -0.3em;
+    --row-depth: -4em;
+    --row-tilt: 18deg;
+  }
+
+  .nfo-logo-row:nth-child(3n + 2) > .nfo-logo-replay,
+  .nfo-logo-row:nth-child(4n) > .nfo-logo-replay {
+    display: block;
+    animation: nfo-logo-glitch 180ms steps(1, end) var(--word-delay, 0ms);
+  }
+}
+
+@keyframes nfo-logo-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--row-offset), 0, var(--row-depth)) rotateX(var(--row-tilt));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nfo-logo-glitch {
+  0%, 82%, 100% {
+    translate: none;
+    text-shadow: none;
+  }
+
+  16% {
+    translate: 0.75em;
+    text-shadow: -0.22em 0 #f03, 0.18em 0 #0b6, 0.3em 0 #26f;
+  }
+
+  42% {
+    translate: -0.45em;
+    text-shadow: 0.2em 0 #f03, -0.16em 0 #0b6, -0.3em 0 #26f;
+  }
+
+  65% {
+    translate: 0.25em;
+    text-shadow: -0.13em 0 #f03, 0.1em 0 #0b6, 0.2em 0 #26f;
+  }
 }
 
 .nfo-header h1 {
