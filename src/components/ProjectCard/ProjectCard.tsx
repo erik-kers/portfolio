@@ -1,4 +1,4 @@
-import { skillsById } from '@/data/skills'
+import SkillPill from '@/components/SkillPill'
 
 type ProjectCardProps = {
   title: string
@@ -14,10 +14,7 @@ export default function ProjectCard({ title, period, description, skills }: Proj
       {period && <p className="mb-1">{period}</p>}
       <p>{description}</p>
       <ul className="nfo-skill-list mt-3" aria-label="Skills used">
-        {skills.map(id => {
-          const skill = skillsById.get(id)
-          return <li key={id}>{skill?.label ?? id}</li>
-        })}
+        {skills.map(id => <li key={id}><SkillPill id={id} /></li>)}
       </ul>
     </article>
   )

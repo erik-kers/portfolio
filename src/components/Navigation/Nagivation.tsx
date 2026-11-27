@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+import ThemeSelect from '@/components/ThemeSelect'
 
 export default function Navigation() {
   return (
@@ -9,6 +10,7 @@ export default function Navigation() {
         <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/" hash="resume" activeOptions={{ exact: true, includeHash: true }}>Résumé</Link></li>
       </ul>
+      <ThemeSelect />
     </nav>
   )
 }
