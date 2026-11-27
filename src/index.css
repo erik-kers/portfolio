@@ -121,10 +121,9 @@ html {
     --row-tilt: 18deg;
   }
 
-  .nfo-logo-row:nth-child(3n + 2) > .nfo-logo-replay,
-  .nfo-logo-row:nth-child(4n) > .nfo-logo-replay {
+  .nfo-logo-replay {
     display: block;
-    animation: nfo-logo-glitch 180ms steps(1, end) var(--word-delay, 0ms);
+    animation: nfo-logo-glitch var(--glitch-duration) steps(1, end);
   }
 }
 
@@ -147,17 +146,17 @@ html {
   }
 
   16% {
-    translate: 0.75em;
+    translate: var(--glitch-offset);
     text-shadow: -0.22em 0 #f03, 0.18em 0 #0b6, 0.3em 0 #26f;
   }
 
   42% {
-    translate: -0.45em;
+    translate: calc(var(--glitch-offset) * -0.6);
     text-shadow: 0.2em 0 #f03, -0.16em 0 #0b6, -0.3em 0 #26f;
   }
 
   65% {
-    translate: 0.25em;
+    translate: calc(var(--glitch-offset) / 3);
     text-shadow: -0.13em 0 #f03, 0.1em 0 #0b6, 0.2em 0 #26f;
   }
 }
