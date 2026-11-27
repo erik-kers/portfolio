@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react'
+import useLogoTilt, { motionPreference } from './useLogoTilt'
 
 const firstName = `▓█████  ██▀███   ██▓ ██ ▄█▀
 ▓█   ▀ ▓██ ▒ ██▒▓██▒ ██▄█▒
@@ -21,7 +22,7 @@ const lastName = ` ██ ▄█▀▓█████  ██▀███    █
 ░  ░      ░  ░   ░           ░`
 
 const logoWords = [firstName.split('\n'), lastName.split('\n')]
-const motionPreference = '(prefers-reduced-motion: reduce)'
+const depthLayers = [1, 2, 3, 4, 5, 6, 7]
 
 function randomGlitch() {
   const word = Math.floor(Math.random() * logoWords.length)
@@ -41,6 +42,7 @@ function randomGlitch() {
 }
 
 export default function Header() {
+  const tilt = useLogoTilt()
   const [glitch, setGlitch] = useState<(ReturnType<typeof randomGlitch> & { id: number }) | null>(null)
 
   const playGlitch = useCallback(() => {
@@ -76,31 +78,57 @@ export default function Header() {
         type="button"
         className="nfo-logo"
         aria-label="Replay logo glitch"
-        onClick={() => {
+        {...tilt.pointerHandlers}
+        onClick={event => {
+          if (event.detail > 0 && tilt.didDrag.current) return
           if (!window.matchMedia(motionPreference).matches) playGlitch()
         }}
       >
-        {logoWords.map((rows, wordIndex) => (
-          <span key={wordIndex} className="nfo-logo-word" aria-hidden="true">
-            {rows.map((row, index) => {
-              const active = glitch?.word === wordIndex && index >= glitch.start
-                && index < glitch.start + glitch.count
+        <span className="nfo-logo-art" ref={tilt.art} aria-hidden="true">
+          {depthLayers.map(layer => (
+            <span
+              key={layer}
+              className="nfo-logo-depth-layer"
+              style={{ '--depth-layer': layer } as CSSProperties}
+            >
+              <span>{firstName}</span>
+              <span>{lastName}</span>
+            </span>
+          ))}
+          {logoWords.map((rows, wordIndex) => (
+            <span key={wordIndex} className="nfo-logo-word">
+              {rows.map((row, index) => {
+                const active = glitch?.word === wordIndex && index >= glitch.start
+                  && index < glitch.start + glitch.count
 
-              return (
-                <span key={index} className="nfo-logo-row">
-                  <span
-                    key={active ? glitch.id : 0}
-                    className={active ? 'nfo-logo-replay' : undefined}
-                    style={active ? glitch.style : undefined}
-                  >
-                    {row}
+                return (
+                  <span key={index} className="nfo-logo-row">
+                    <span
+                      key={active ? glitch.id : 0}
+                      className={active ? 'nfo-logo-replay' : undefined}
+                      style={active ? glitch.style : undefined}
+                    >
+                      {row}
+                    </span>
                   </span>
-                </span>
-              )
-            })}
-          </span>
-        ))}
+                )
+              })}
+            </span>
+          ))}
+        </span>
       </button>
+      {tilt.supportsPhoneTilt && (
+        <button
+          type="button"
+          className="nfo-phone-tilt nfo-link"
+          disabled={tilt.phoneTilt === 'unavailable'}
+          onClick={tilt.togglePhoneTilt}
+        >
+          {tilt.phoneTilt === 'on' ? 'Disable phone tilt'
+            : tilt.phoneTilt === 'off' ? 'Enable phone tilt'
+            : 'Phone tilt unavailable'}
+        </button>
+      )}
       <h1>Erik Kers</h1>
       <p>Frontend developer in Stockholm.</p>
       <p className="mt-3">

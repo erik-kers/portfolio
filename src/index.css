@@ -30,12 +30,8 @@ html[data-theme="dark"] { color-scheme: dark; }
   position: sticky;
   top: 0;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.75rem;
-  padding-block: 0.5rem;
+  min-height: 3.5rem;
+  padding: 0.75rem 2.75rem;
   background: var(--page-background);
   border-bottom: 1px dashed currentColor;
 }
@@ -70,12 +66,39 @@ html[data-theme="dark"] { color-scheme: dark; }
   background: var(--page-text);
 }
 
-.nfo-theme-select {
-  padding: 0.25rem 0.35rem;
-  color: var(--page-text);
-  background: var(--page-background);
-  border: 1px solid currentColor;
-  font-size: 0.875rem;
+@media (max-width: 26rem) {
+  .nfo-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .nfo-nav li + li::before {
+    display: none;
+  }
+}
+
+.nfo-theme-control {
+  position: absolute;
+  top: 0.375rem;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  outline-offset: -4px;
+}
+
+.nfo-theme-control:focus-within,
+.nfo-theme-control:hover {
+  outline: 1px dashed currentColor;
+}
+
+.nfo-theme-control select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   cursor: pointer;
 }
 
@@ -85,15 +108,38 @@ html[data-theme="dark"] { color-scheme: dark; }
 }
 
 .nfo-logo {
-  display: grid;
-  justify-items: center;
+  display: block;
   width: max-content;
   cursor: pointer;
-  gap: 0.35em;
+  touch-action: pan-y;
+  user-select: none;
   margin: 0 auto 1rem;
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(10px, 4.15vw, 24px);
   line-height: 1;
+}
+
+.nfo-logo-art {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.35em;
+}
+
+.nfo-logo-depth-layer {
+  display: none;
+}
+
+.nfo-phone-tilt {
+  display: none;
+  margin-block: 0 0.75rem;
+  padding: 0.35em 0.5em;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+@media (any-pointer: coarse) and (prefers-reduced-motion: no-preference) {
+  .nfo-phone-tilt { display: inline-block; }
 }
 
 .nfo-logo:focus-visible {
@@ -111,6 +157,30 @@ html[data-theme="dark"] { color-scheme: dark; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .nfo-logo { cursor: grab; }
+  .nfo-logo:active { cursor: grabbing; }
+
+  .nfo-logo-art {
+    transform: perspective(32em) rotateX(var(--logo-pitch, 0deg)) rotateY(var(--logo-yaw, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 180ms ease-out;
+  }
+
+  .nfo-logo-depth-layer {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    justify-items: center;
+    gap: inherit;
+    white-space: pre;
+    text-align: left;
+    color: color-mix(in srgb, var(--page-text) calc(72% - 4% * var(--depth-layer)), var(--page-background));
+    opacity: var(--logo-depth-opacity, 0);
+    transform: translateZ(calc(-0.19em * var(--depth-layer)));
+    transition: opacity 180ms ease-out;
+    pointer-events: none;
+  }
+
   .nfo-logo-word {
     perspective: 14em;
   }
