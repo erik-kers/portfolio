@@ -290,6 +290,18 @@ html[data-theme="dark"] { color-scheme: dark; }
   margin-block: 0.25rem;
 }
 
+@media (max-width: 36rem) {
+  .nfo-skills dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    margin-block: 0.75rem;
+  }
+
+  .nfo-skills dt {
+    text-transform: uppercase;
+  }
+}
+
 .nfo-skills dt {
   font-weight: 700;
 }
@@ -300,30 +312,33 @@ html[data-theme="dark"] { color-scheme: dark; }
   gap: 0.3rem 0.4rem;
 }
 
-.nfo-skill-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-block-size: 1.625rem;
-  padding: 0.2em 0.65em;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  line-height: 1.15;
-  text-align: center;
-  color: var(--page-text);
-  background: light-dark(
-    hsl(var(--skill-hue) 75% 88%),
-    hsl(var(--skill-hue) 45% 23%)
-  );
+.nfo-skill-index li:not(:last-child)::after {
+  content: "·" / "";
+  margin-inline-start: 0.4em;
+  opacity: 0.65;
 }
 
-a.nfo-skill-pill {
+.nfo-skill-link {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
-a.nfo-skill-pill:hover {
+.nfo-skill-link:hover {
   text-decoration-thickness: 2px;
+}
+
+.nfo-tech-tag {
+  font-style: italic;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.nfo-tech-tag > span {
+  font-style: normal;
+  color: light-dark(
+    hsl(var(--skill-hue) 68% 35%),
+    hsl(var(--skill-hue) 78% 72%)
+  );
 }
 
 .nfo-link {

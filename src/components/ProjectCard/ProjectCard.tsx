@@ -1,4 +1,5 @@
-import SkillPill from '@/components/SkillPill'
+import ProjectSkill from '@/components/ProjectSkill'
+import { compareSkills } from '@/data/skills'
 
 type ProjectCardProps = {
   title: string
@@ -14,7 +15,7 @@ export default function ProjectCard({ title, period, description, skills }: Proj
       {period && <p className="mb-1">{period}</p>}
       <p>{description}</p>
       <ul className="nfo-skill-list mt-3" aria-label="Skills used">
-        {skills.map(id => <li key={id}><SkillPill id={id} /></li>)}
+        {[...skills].sort(compareSkills).map(id => <li key={id}><ProjectSkill id={id} /></li>)}
       </ul>
     </article>
   )

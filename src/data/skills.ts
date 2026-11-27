@@ -9,3 +9,12 @@ export const skillsById = new Map(
 )
 
 export const projectSkillIds = new Set(projects.flatMap(project => project.skills))
+
+const skillCollator = new Intl.Collator('en', { sensitivity: 'base', numeric: true, ignorePunctuation: true })
+
+export function compareSkills(first: string, second: string) {
+  return skillCollator.compare(
+    skillsById.get(first)?.label ?? first,
+    skillsById.get(second)?.label ?? second,
+  )
+}
