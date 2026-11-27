@@ -82,6 +82,18 @@
       {
         "id": "sass",
         "label": "Sass"
+      },
+      {
+        "id": "react-hook-form",
+        "label": "React Hook Form"
+      },
+      {
+        "id": "zod",
+        "label": "Zod"
+      },
+      {
+        "id": "liquid",
+        "label": "Liquid"
       }
     ]
   },
@@ -127,7 +139,7 @@
       },
       {
         "id": "dotnet",
-        "label": ".NET 8"
+        "label": ".NET"
       },
       {
         "id": "aspnet-mvc",
@@ -136,6 +148,47 @@
       {
         "id": "odata",
         "label": "OData"
+      },
+      {
+        "id": "payload-cms",
+        "label": "Payload CMS"
+      },
+      {
+        "id": "dataverse",
+        "label": "Dataverse"
+      },
+      {
+        "id": "power-pages",
+        "label": "Power Pages"
+      },
+      {
+        "id": "fetchxml",
+        "label": "FetchXML"
+      },
+      {
+        "id": "bankid",
+        "label": "BankID"
+      },
+      {
+        "id": "swedbank-pay",
+        "label": "Swedbank Pay"
+      }
+    ]
+  },
+  {
+    "label": "Testing",
+    "skills": [
+      {
+        "id": "vitest",
+        "label": "Vitest"
+      },
+      {
+        "id": "playwright",
+        "label": "Playwright"
+      },
+      {
+        "id": "k6",
+        "label": "k6"
       }
     ]
   }

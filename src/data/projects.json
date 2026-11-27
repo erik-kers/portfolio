@@ -1,9 +1,64 @@
 [
   {
-    "id": "industrial-membership",
-    "title": "Industrial membership organization",
-    "period": "Started Oct 2024",
-    "description": "Reviewed and rewrote the frontend of an unsupported ASP.NET application. Helped separate the interface from the backend and collaborated on the API upgrade to .NET 8.",
+    "id": "forena-member-portal",
+    "title": "Forena — Member self-service portal",
+    "period": "Jun 2025–Nov 2026",
+    "description": "Served as tech lead and lead frontend developer for Forena’s new member portal. Led the architecture and delivery across Next.js, Payload CMS, a .NET API, and Azure. Members can manage their accounts and cases through BankID sign-in, and Forena can update pages without developer help. The portal was built for reuse by other unions on the MMS membership platform.",
+    "skills": [
+      "nextjs",
+      "typescript",
+      "payload-cms",
+      "dotnet",
+      "dataverse",
+      "dynamics-365",
+      "bankid",
+      "azure",
+      "azure-devops",
+      "ci-cd",
+      "vitest",
+      "playwright"
+    ]
+  },
+  {
+    "id": "membership-application",
+    "title": "Political party — Membership application",
+    "period": "Mar 2025–Nov 2026",
+    "description": "Built the React application from scratch and owned its architecture, payments, testing, and deployment. Applicants can join and pay in one flow, and completed applications are sent automatically to the membership system.",
+    "skills": [
+      "react",
+      "typescript",
+      "tanstack-router",
+      "react-query",
+      "react-hook-form",
+      "zod",
+      "dotnet",
+      "azure",
+      "azure-devops",
+      "swedbank-pay",
+      "vitest",
+      "playwright",
+      "k6"
+    ]
+  },
+  {
+    "id": "autoplan-leasing-portal",
+    "title": "AutoPlan — Leasing portal upgrade",
+    "period": "Sep 2025–Feb 2026",
+    "description": "Led the frontend upgrade of AutoPlan’s leasing portal. Built the new Power Pages interface from UX designs, refactored the existing code, and mentored junior developers so they could work more independently in the codebase.",
+    "skills": [
+      "power-pages",
+      "bootstrap",
+      "liquid",
+      "fetchxml",
+      "javascript",
+      "azure-devops"
+    ]
+  },
+  {
+    "id": "pappers-dues-reporting",
+    "title": "Pappers — Union dues reporting",
+    "period": "Oct–Dec 2024",
+    "description": "Rebuilt the frontend of a legacy ASP.NET app accountants use to report union dues. Adapted the new React interface to a separate .NET 8 API, making the frontend easier to maintain and test.",
     "skills": [
       "react",
       "vite",
@@ -16,9 +71,9 @@
   },
   {
     "id": "kommunal-modernization",
-    "title": "Kommunal — Application modernization",
+    "title": "Kommunal — KomMed Web modernization",
     "period": "Jan–Jun 2023",
-    "description": "Recommended Next.js for a legacy ASP.NET replacement and co-led the design and frontend development. Worked with the client’s test lead to improve performance and accessibility.",
+    "description": "Co-led the rebuild of Kommunal’s membership administration interface in Next.js. Worked with the client’s test lead and moved more logic to the server for better security.",
     "skills": [
       "nextjs",
       "zustand",
@@ -32,7 +87,7 @@
     "id": "tya-certification",
     "title": "TYA — Training and certification",
     "period": "Jan–Sep 2022",
-    "description": "Led frontend development for two apps. One let staff administer training and certifications, and the other let certificate holders view their credentials and pay for replacement cards. Set up deployment pipelines and Azure infrastructure.",
+    "description": "Led frontend development for two apps that replaced TYA’s training and certification system. Instructors register training digitally, and drivers sign in with BankID to view certificates and pay for replacement cards. Set up deployment pipelines and Azure hosting.",
     "skills": [
       "nextjs",
       "react-query",
@@ -42,7 +97,9 @@
       "azure",
       "chakra-ui",
       "docker",
-      "ci-cd"
+      "ci-cd",
+      "bankid",
+      "dynamics-365"
     ]
   },
   {

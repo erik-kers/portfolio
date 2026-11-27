@@ -1,9 +1,15 @@
 [
   {
+    "id": "softronic",
+    "organization": "Softronic AB",
+    "role": "Frontend Developer and Tech Lead",
+    "period": "Sep 2025 – Present"
+  },
+  {
     "id": "erik-kers-ab",
     "organization": "Erik Kers AB",
     "role": "Owner and consultant",
-    "period": "Started Aug 2024"
+    "period": "Aug 2024 – Present"
   },
   {
     "id": "freecode",
@@ -13,13 +19,13 @@
   },
   {
     "id": "innofactor-developer",
-    "organization": "Innofactor",
+    "organization": "Innofactor Sverige",
     "role": "Frontend Developer",
     "period": "Apr 2018 – Sep 2022"
   },
   {
     "id": "innofactor-intern",
-    "organization": "Innofactor",
+    "organization": "Innofactor Sverige",
     "role": "Frontend Developer Intern",
     "period": "Sep 2017 – Apr 2018"
   }
