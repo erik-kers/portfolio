@@ -1,10 +1,15 @@
-export default function ResumeCard() {
+type ResumeCardProps = {
+  organization: string
+  role: string
+  period: string
+}
+
+export default function ResumeCard({ organization, role, period }: ResumeCardProps) {
   return (
-    <ul className="nfo-entry">
-      <li className="font-bold">Innofactor</li>
-      <li >2018 - 2019</li>
-      <li className="font-bold">Frontend developer</li>
-      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque, odio ut congue finibus, justo lorem fringilla nulla, sit amet malesuada ligula enim placerat tellus. Donec vel pulvinar dui, et rhoncus nisl.</li>
-    </ul>
+    <li className="nfo-entry">
+      <p className="font-bold">{organization}</p>
+      <p>{role}</p>
+      <p>{period}</p>
+    </li>
   )
 }

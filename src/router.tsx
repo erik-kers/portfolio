@@ -1,5 +1,5 @@
-import { createRootRoute, createRoute, createRouter, Link } from '@tanstack/react-router'
-import App, { Description, Home, Projects, Resume } from './App'
+import { createRootRoute, createRoute, createRouter, Link, redirect } from '@tanstack/react-router'
+import App, { Home, Projects } from './App'
 
 const rootRoute = createRootRoute({
   component: App,
@@ -9,7 +9,6 @@ const rootRoute = createRootRoute({
 })
 
 const homeRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: Home })
-const descriptionRoute = createRoute({ getParentRoute: () => rootRoute, path: '/description', component: Description })
 const projectsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/projects',
@@ -23,10 +22,25 @@ function ProjectsPage() {
   const { skill } = projectsRoute.useSearch()
   return <Projects skill={skill} />
 }
-const resumeRoute = createRoute({ getParentRoute: () => rootRoute, path: '/resume', component: Resume })
+// Preserve bookmarks for sections that now live on the homepage.
+const descriptionRedirect = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/description',
+  beforeLoad: () => {
+    throw redirect({ to: '/', hash: 'about', replace: true })
+  },
+})
+
+const resumeRedirect = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/resume',
+  beforeLoad: () => {
+    throw redirect({ to: '/', hash: 'resume', replace: true })
+  },
+})
 
 export const router = createRouter({
-  routeTree: rootRoute.addChildren([homeRoute, descriptionRoute, projectsRoute, resumeRoute]),
+  routeTree: rootRoute.addChildren([homeRoute, projectsRoute, descriptionRedirect, resumeRedirect]),
   scrollRestoration: true,
 })
 

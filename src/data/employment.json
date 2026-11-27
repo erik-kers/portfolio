@@ -1,0 +1,26 @@
+[
+  {
+    "id": "erik-kers-ab",
+    "organization": "Erik Kers AB",
+    "role": "Owner and consultant",
+    "period": "Started Aug 2024"
+  },
+  {
+    "id": "freecode",
+    "organization": "Freecode AB",
+    "role": "Senior Frontend Consultant",
+    "period": "Sep 2022 – Aug 2024"
+  },
+  {
+    "id": "innofactor-developer",
+    "organization": "Innofactor",
+    "role": "Frontend Developer",
+    "period": "Apr 2018 – Sep 2022"
+  },
+  {
+    "id": "innofactor-intern",
+    "organization": "Innofactor",
+    "role": "Frontend Developer Intern",
+    "period": "Sep 2017 – Apr 2018"
+  }
+]

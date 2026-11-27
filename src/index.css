@@ -7,6 +7,12 @@ html {
   scroll-padding-top: 5rem;
 }
 
+@media (max-width: 26rem) {
+  html {
+    scroll-padding-top: 7rem;
+  }
+}
+
 .nfo-document {
   width: min(100% - 2rem, 66ch);
   margin-inline: auto;

@@ -5,6 +5,9 @@ import Text from '@/components/Text'
 import ResumeCard from '@/components/ResumeCard'
 import ProjectCard from '@/components/ProjectCard'
 import Skills from '@/components/Skills'
+import about from '@/data/about.json'
+import education from '@/data/education.json'
+import employment from '@/data/employment.json'
 import projects from '@/data/projects.json'
 import { skillsById } from '@/data/skills'
 
@@ -20,16 +23,13 @@ export default function App() {
   )
 }
 
-export function Description() {
+function Description() {
   return (
-    <section className="nfo-section" aria-labelledby="about-heading">
-      <h2 id="about-heading">About</h2>
-      <Text gutterBottom>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque, odio ut congue finibus, justo lorem fringilla nulla, sit amet malesuada ligula enim placerat tellus. Donec vel pulvinar dui, et rhoncus nisl. Nunc nec bibendum turpis. Vestibulum rhoncus erat et commodo consequat. Sed et ullamcorper elit. Duis in viverra magna. Donec ornare porta ante, vitae aliquam mauris porttitor scelerisque.
-      </Text>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque, odio ut congue finibus, justo lorem fringilla nulla, sit amet malesuada ligula enim placerat tellus. Donec vel pulvinar dui, et rhoncus nisl. Nunc nec bibendum turpis. Vestibulum rhoncus erat et commodo consequat. Sed et ullamcorper elit. Duis in viverra magna. Donec ornare porta ante, vitae aliquam mauris porttitor scelerisque.
-      </Text>
+    <section className="nfo-section" aria-labelledby="about">
+      <h2 id="about">About</h2>
+      {about.map((paragraph, index) => (
+        <Text key={paragraph} gutterBottom={index < about.length - 1}>{paragraph}</Text>
+      ))}
     </section>
   )
 }
@@ -55,14 +55,19 @@ export function Projects({ skill }: { skill?: string }) {
   )
 }
 
-export function Resume() {
+function Resume() {
   return (
-    <section className="nfo-section" aria-labelledby="rés-heading">
-      <h2 id="rés-heading">Résumé</h2>
+    <section className="nfo-section" aria-labelledby="resume">
+      <h2 id="resume">Résumé</h2>
       <Skills />
-      <ResumeCard />
-      <ResumeCard />
-      <ResumeCard />
+      <h3 className="mb-3 font-bold">Employment</h3>
+      <ul>
+        {employment.map(entry => <ResumeCard key={entry.id} {...entry} />)}
+      </ul>
+      <h3 className="mt-6 mb-3 font-bold">Education</h3>
+      <ul>
+        {education.map(entry => <ResumeCard key={entry.id} {...entry} />)}
+      </ul>
     </section>
   )
 }
@@ -71,7 +76,6 @@ export function Home() {
   return (
     <>
       <Description />
-      <Projects />
       <Resume />
     </>
   )

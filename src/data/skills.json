@@ -1,0 +1,142 @@
+[
+  {
+    "label": "Languages",
+    "skills": [
+      {
+        "id": "typescript",
+        "label": "TypeScript"
+      },
+      {
+        "id": "javascript",
+        "label": "JavaScript"
+      },
+      {
+        "id": "css",
+        "label": "CSS"
+      },
+      {
+        "id": "html",
+        "label": "HTML"
+      }
+    ]
+  },
+  {
+    "label": "Frontend",
+    "skills": [
+      {
+        "id": "react",
+        "label": "React"
+      },
+      {
+        "id": "nextjs",
+        "label": "Next.js"
+      },
+      {
+        "id": "aurelia",
+        "label": "Aurelia"
+      },
+      {
+        "id": "react-query",
+        "label": "React Query"
+      },
+      {
+        "id": "tanstack-router",
+        "label": "TanStack Router"
+      },
+      {
+        "id": "zustand",
+        "label": "Zustand"
+      },
+      {
+        "id": "tailwind-css",
+        "label": "Tailwind CSS"
+      },
+      {
+        "id": "bootstrap",
+        "label": "Bootstrap"
+      },
+      {
+        "id": "chakra-ui",
+        "label": "Chakra UI"
+      },
+      {
+        "id": "fluent-ui",
+        "label": "Fluent UI"
+      },
+      {
+        "id": "material-ui",
+        "label": "Material UI"
+      },
+      {
+        "id": "styled-components",
+        "label": "Styled Components"
+      },
+      {
+        "id": "jquery",
+        "label": "jQuery"
+      },
+      {
+        "id": "less",
+        "label": "Less"
+      },
+      {
+        "id": "sass",
+        "label": "Sass"
+      }
+    ]
+  },
+  {
+    "label": "Tooling",
+    "skills": [
+      {
+        "id": "vite",
+        "label": "Vite"
+      },
+      {
+        "id": "docker",
+        "label": "Docker"
+      },
+      {
+        "id": "azure",
+        "label": "Azure"
+      },
+      {
+        "id": "azure-devops",
+        "label": "Azure DevOps"
+      },
+      {
+        "id": "ci-cd",
+        "label": "CI/CD"
+      },
+      {
+        "id": "git",
+        "label": "Git"
+      },
+      {
+        "id": "gulp",
+        "label": "Gulp"
+      }
+    ]
+  },
+  {
+    "label": "Platforms",
+    "skills": [
+      {
+        "id": "dynamics-365",
+        "label": "Dynamics 365"
+      },
+      {
+        "id": "dotnet",
+        "label": ".NET 8"
+      },
+      {
+        "id": "aspnet-mvc",
+        "label": "ASP.NET MVC"
+      },
+      {
+        "id": "odata",
+        "label": "OData"
+      }
+    ]
+  }
+]
